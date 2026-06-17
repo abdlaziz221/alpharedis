@@ -15,9 +15,7 @@
 7. [API — Commandes disponibles](#7-api--commandes-disponibles)
 8. [Installation et exécution](#8-installation-et-exécution)
 9. [Guide d'utilisation](#9-guide-dutilisation)
-10. [Tests et benchmark](#10-tests-et-benchmark)
-11. [Structure du projet](#11-structure-du-projet)
-12. [Auteurs](#12-auteurs)
+10. [Structure du projet](#10-structure-du-projet)
 
 ---
 
@@ -386,37 +384,7 @@ OK
 
 ---
 
-## 10. Tests et benchmark
-
-### Tests de validation (18/18)
-
-Le programme `Benchmark.java` valide tous les cas limites :
-
-- GET/DEL sur clé inexistante
-- SET/GET avec mise à jour
-- LPUSH/RPUSH avec vérification de l'ordre
-- LPOP/RPOP sur liste vide
-- Auto-suppression d'une liste vide
-- LRANGE sur clé inexistante
-- LRANGE sur clé de type string (WRONGTYPE)
-- TYPE sur string et list
-- Commandes sans arguments
-- Commande inconnue
-- Commande vide
-
-### Benchmark de performance
-
-| Opération | 10 000 opérations | Temps moyen |
-|-----------|-------------------|-------------|
-| SET | ~80 ms | ~8 µs/op |
-| GET | ~65 ms | ~6.5 µs/op |
-| DEL | ~30 ms | ~3 µs/op |
-| LPUSH | ~8 ms | ~0.8 µs/op |
-| LPOP | ~8 ms | ~0.8 µs/op |
-
----
-
-## 11. Structure du projet
+## 10. Structure du projet
 
 ```
 REDISLIKE/
@@ -449,32 +417,6 @@ REDISLIKE/
     └── benchmark/                      # Tests
         └── Benchmark.java              # Validation + perf
 ```
-
----
-
-## 12. Auteurs
-
-| Nom | Rôle |
-|-----|------|
-| Ibrahima GAYE | Développeur |
-
-- **Email** : ibrahima.gaye.upa@gmail.com
-- **Formation** : Licence GLSI / DIC — Option ASD
-
----
-
-## Annexe : Complexité des algorithmes
-
-| Algorithme | Meilleur cas | Cas moyen | Pire cas |
-|------------|--------------|-----------|----------|
-| Hachage (DJb2) | O(1) | O(1) | O(n) |
-| Insertion table | O(1) | O(1) | O(n) |
-| Recherche table | O(1) | O(1) | O(n) |
-| Suppression table | O(1) | O(1) | O(n) |
-| Insertion liste | O(1) | O(1) | O(1) |
-| Suppression liste | O(1) | O(1) | O(1) |
-
-> Le pire cas O(n) survient quand toutes les clés atterrissent dans le même bucket (trop de collisions). Avec un bon facteur de charge et une bonne fonction de hachage, le cas moyen est O(1).
 
 ---
 
