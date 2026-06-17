@@ -1,0 +1,29 @@
+SET nom Ibrahima
+SET prenom Gaye
+SET age 22
+SET ville Dakar
+GET nom
+GET prenom
+SET nom Diop
+GET nom
+LPUSH fruits pomme
+LPUSH fruits banane
+LPUSH fruits orange
+RPUSH fruits kiwi
+RPUSH fruits mangue
+LRANGE fruits 0 -1
+LPOP fruits
+RPOP fruits
+LRANGE fruits 0 -1
+LPUSH legumes carotte
+LPUSH legumes tomate
+RPUSH legumes oignon
+LRANGE legumes 0 -1
+TYPE nom
+TYPE fruits
+KEYS
+DEL age
+GET age
+KEYS
+FLUSHALL
+KEYS
